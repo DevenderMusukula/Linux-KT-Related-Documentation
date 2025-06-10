@@ -1,0 +1,200 @@
+This module is a brief overview of the most common commands to work with directories:
+
+pwd, cd, ls, mkdir and rmdir. These commands are available on any Linux (or Unix) system.
+
+This module also discusses absolute and relative paths and path completion in the bash shell.
+
+pwd:
+====
+
+You can verify the curreent path where you landed on the server using pwd ommand (Print Working Directory).
+
+Go ahead, try it: Login to server or command line interfface and type pwd. The tool displays your current directory.
+
+cd :
+=====
+You can change your current directory with the cd command (Change Directory).
+
+cd ~ :
+======
+
+The cd is also a shortcut to get back into your home directory. Just typing cd without a target directory, will put you in your home directory. Typing cd ~ has the same effect.
+
+example: 
+********
+
+cd /etc
+pwd
+cd
+pwd
+cd ~
+pwd
+
+cd .. :
+========
+
+To go to the parent directory (the one just above your current directory in the directory tree), type cd .. 
+
+example:
+*********
+
+pwd
+cd ..
+pwd
+
+To stay in the current directory, type cd . :-) We will see useful use of the . character representing the current directory later.
+
+ cd - :
+=======
+
+Another useful shortcut with cd is to just type cd - to go to the previous directory.
+
+example:
+*********
+pwd
+cd /etc
+pwd
+cd -
+pwd
+
+
+Absolute and Relative paths :
+==============================
+
+You should be aware of absolute and relative paths in the file tree. 
+When you type a path starting with a slash (/), then the root of the file tree is assumed. If you don't start your path with a slash, then the current directory is the assumed starting point.
+
+The evidences below first shows the current directory /home/deva. From within this directory, you have to type cd /home instead of cd home to go to the /home directory.
+
+deva@redhat123$ pwd
+/home/deva
+deva@redhat123$ cd home
+bash: cd: home: No such file or directory
+deva@redhat123$ cd /home
+deva@redhat123$ pwd
+/home
+
+
+When inside /home, you have to type cd deva instead of cd /deva to enter the subdirectory deva of the current directory /home.
+
+deva@redhat123$ pwd
+/home
+deva@redhat123$ cd /deva
+bash: cd: /deva: No such file or directory
+deva@redhat123$ cd deva
+deva@redhat123$ pwd
+/home/deva
+deva@redhat123$
+
+In case your current directory is the root directory /, then both cd /home and cd home will get you in the /home directory.
+
+deva@redhat123$ pwd
+/
+deva@redhat123$ cd home
+deva@redhat123$ pwd
+/home
+deva@redhat123$ cd /
+deva@redhat123$ cd /home
+deva@redhat123$ pwd
+/home
+deva@redhat123$ 
+
+
+
+ll :
+=====
+
+Long list the files under the current working directory (Displays files names with ownership and permissions)
+
+ls:
+====
+List the files under current working directory (Only displays files names) 
+
+ls -a :
+========
+
+Lists the files under current working directory including hidden files/folders.
+
+ls -ltr :
+==========
+
+Lists the files under current working direcctory with timestamp and latest modified files at bottom.
+
+ls -lh :
+========
+
+Lists teh files under current working directory and shows output in human readable format.
+
+mkdir :
+========
+To Create a directory
+
+mkdir <directory name>
+
+mkdir -p :
+===========
+To create nested folder structure as parent directory including subfolders in it
+
+mkdir -p <nested directory path>
+
+
+rmdir :
+=========
+
+Removes a directory which doen't have any contents in it.
+
+rmdir <direcctoty name>
+
+rmdir -p :
+===========
+Removes a parent directory including subfolders in it.
+
+
+Working with Files :
+=======================
+
+--- all files are case sensitive
+--- everything is a file
+--- file --> To know the file type. file <filename>
+--- touch --> To create an empty file.
+--- cat --> Can be used to read the file content as well as create file with content.
+--- vi / vim --> vi (Visual Editor) , Vim (Visually Improved Editor)
+--- rm --> remove forever
+--- rm -i --> To prevent yourself from accidentally removing a file, you can type rm -i.
+--- rm -rf --> rm -r will not remove non-empty directories. However rm accepts several options that will allow you to remove any directory. The rm -rf statement is famous because it will 
+               erase anything (providing that you have the permissions to do so). When you are logged on as root, be very careful with rm -rf (the f means force and the r means recursive) 
+              since being root implies that permissions don't apply to you. You can literally erase your entire file system by accident.
+
+--- cp --> To copy a file, use cp with a source and a target argument.
+
+--- cp -pr --> To copy complete directories, use cp -r (the -r option forces recursive copying of all files in all subdirectories).
+
+--- cp -i --> To prevent cp from overwriting existing files, use the -i (for interactive) option.
+
+--- mv  --> Use mv to rename a file or to move the file to another directory. And also rename files and direcctories.
+
+--- mv -i --> The mv also has a -i switch similar to cp and rm. mv -i will ask permission to overwrite an existing file.
+
+--- head --> You can use head to display the first ten lines of a file. Example:- head /etc/passwd
+         --> The head command can also display the first n lines of a file. Example:- head -4 /etc/passwd
+         --> And head can also display the first n bytes. Example:- head -c14 /etc/passwd
+
+--- tail --> Similar to head, the tail command will display the last ten lines of a file. Example:- tail /etc/passwd
+         --> You can give tail the number of lines you want to see. Example:- tail -3 /etc/passwd
+
+--- cat --> The cat command is one of the most universal tools, yet all it does is copy standard input to standard output. Example:- cat /etc/passwd
+
+--- create files using cat --> You can use cat to create flat text files. Type the cat > deva.txt command. Then type one or more lines, finishing each line with the enter key. 
+                           --> After the last line, type and hold the Control (Ctrl) key and press d.
+
+                                            deva@redhat123$  cat > winter.txt
+                                            It is very cold today!
+                                            deva@redhat123$ cat winter.txt
+                                            It is very cold today!
+                                            deva@redhat123$
+                            The Ctrl d key combination will send an EOF (End of File) to the running process ending the cat command.
+
+--- copy files using cat --> Example:- cat file1.txt > file2.txt
+--- tac --> print file contents in reverse --> It will show you the purpose of tac (cat backwards).
+--- less and more ---> The more command is useful for displaying files that take up more than one screen. More will allow you to see the contents of the file page by page. Use the space bar to see the next
+                        page, or q to quit. Some people prefer the less command to more.
