@@ -35,15 +35,15 @@ Linux also has clearly defined privileges to restrict access to those who don’
 
 **$${\color{orange}**Scalability**:}$$:** Scalability is key to the continuity of a DevOps operation. You need to be able to grow without having to change your operating system. To do so would be expensive and time-consuming. Fortunately, Linux is scalable. The Linux kernel can store and process huge amounts of memory, and the requisite hard disk drive (HDD) capacity. You can run it on anything from IoT devices to supercomputers, and keep modifying the OS so it fits your needs.
 
-**$${\color{orange}**Automation and Scripting**:}$$:** Automation is the key for modern enterprises and that is one reason why companies hiring DevOps professionals are asking for Linux knowledge. Linux makes it much easier to efficiently carry the server-side work. Once the scripts are written to install server software ((MySQL, Apache, SSH, FTP, etc)), configure them, and maintain them, everything is taken care of automatically.
+**$${\color{orange}**Automation \space  and \space Scripting**:}$$:** Automation is the key for modern enterprises and that is one reason why companies hiring DevOps professionals are asking for Linux knowledge. Linux makes it much easier to efficiently carry the server-side work. Once the scripts are written to install server software ((MySQL, Apache, SSH, FTP, etc)), configure them, and maintain them, everything is taken care of automatically.
 
-**$${\color{orange}**High Endurance**:}$$:** The uptime and availability of Linux servers are very high. Linux has the highest number of servers running on the Internet.
+**$${\color{orange}**High \space Endurance**:}$$:** The uptime and availability of Linux servers are very high. Linux has the highest number of servers running on the Internet.
 
 
 
 ## **Advantages of Linux**
 
-**$${\color{orange}**Open Source Nature**:}$$:** Open Source means the source code of the Linux software is freely available to the public. Anyone can see, modify, and distribute the software.
+**$${\color{orange}**Open \space Source \space Nature**:}$$:** Open Source means the source code of the Linux software is freely available to the public. Anyone can see, modify, and distribute the software.
 
 **$${\color{orange}**Multiuser \space and \space Multitasking**:}$$:** It is a multiuser & multitasking operating system as it can run multiple tasks simultaneously without affecting the system speed.
 
